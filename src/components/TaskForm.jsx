@@ -9,6 +9,8 @@ export default function TaskForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     createTask(title,description);
+    setTitle('');
+    setDescription('');
   };
 
   return (
@@ -19,6 +21,7 @@ export default function TaskForm() {
           type="text"
           placeholder="Title"
           className="bg-slate-300 p-3 w-full mb-4 rounded-md"
+          value={title}
           onChange={(e) => {
             setTitle(e.target.value);
           }}
@@ -26,6 +29,7 @@ export default function TaskForm() {
         <textarea
           placeholder="Description"
           className="bg-slate-300 p-3 w-full mb-4 rounded-md"
+          value={description}
           onChange={(e) => {
             setDescription(e.target.value);
           }}
